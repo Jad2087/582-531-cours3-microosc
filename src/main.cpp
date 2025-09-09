@@ -19,7 +19,7 @@ void setup() {
 
   pinMode( MA_BROCHE_BOUTON , INPUT );
   
-  FastLED.addLeds<WS2812,27,GRB> ( & monPixel, 1  );
+  FastLED.addLeds<WS2812,27,GRB> ( & monPixel, 1 );
   
 }
 
