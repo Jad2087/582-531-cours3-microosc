@@ -18,10 +18,7 @@ void setup() {
   Serial.begin(115200);
 
   pinMode( MA_BROCHE_BOUTON , INPUT );
-
-  int vert = millis()% 255;
-  monPixel = CRGB();
-  FastLED.show();
+  
   FastLED.addLeds<WS2812,27,GRB> ( & monPixel, 1  );
   
 }
@@ -37,5 +34,7 @@ void loop() {
   int maLectureAngle;
   maLectureAngle = analogRead(MA_BROCHE_ANGLE); 
   monOsc.sendInt("/angle" , maLectureAngle);
+  monPixel = CRGB(0, millis()% 255, 0);
+  FastLED.show();
 }
 
